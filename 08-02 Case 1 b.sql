@@ -26,3 +26,22 @@ select
 from customers_histogram ch
 cross join all_customers ac
 order by 1;
+
+-- Result:
+
+|orders|prc_distribution_of_customers|
+|------|-----------------------------|
+|1     |1.51                         |
+|2     |4.29                         |
+|3     |6.68                         |
+|4     |12.11                        |
+|5     |16.9                         |
+|6     |13.49                        |
+|7     |14.63                        |
+|8     |10.34                        |
+|9     |8.95                         |
+|10    |4.92                         |
+|11    |2.9                          |
+|12    |2.27                         |
+|13    |0.88                         |
+|17    |0.13                         |
