@@ -1,0 +1,17 @@
+﻿cost_forecast_id;year;ship;sales;cost_forecast
+1;2018;First Class;59278;70000
+2;2018;Same Day;18969;30000
+3;2018;Second Class;99676;70000
+4;2018;Standard Class;336453;300000
+5;2019;First Class;81893;70000
+6;2019;Same Day;31442;30000
+7;2019;Second Class;115262;110000
+8;2019;Standard Class;352090;360000
+9;2020;First Class;109478;95000
+10;2020;Same Day;38202;30000
+11;2020;Second Class;144208;120000
+12;2020;Standard Class;427638;400000
+13;2021;First Class;169873;150000
+14;2021;Same Day;59575;30000
+15;2021;Second Class;168109;130000
+16;2021;Standard Class;501765;480000
