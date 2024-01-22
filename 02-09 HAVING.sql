@@ -25,7 +25,7 @@ from orders
 group by 1
 -- having last_order <date('2021-01-01');
 
-	|delivery_state      |last_order|first_order|
+|delivery_state      |last_order|first_order|
 |--------------------|----------|-----------|
 |Kentucky            |2022-01-24|2018-02-01 |
 |California          |2022-01-25|2018-02-01 |
