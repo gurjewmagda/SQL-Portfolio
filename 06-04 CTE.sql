@@ -4,13 +4,13 @@ needed_states as
 	select delivery_state
 	from orders
 	group by 1
-	having count(distinct customer_id) > 100
+	having count(distinct customer_id) > 100	-- states where number of customers >100
 	),
 all_orders as
 	(
 	select count(order_id) as total_orders 
 	from orders
-	),
+	),						-- the number of all orders (5009)
 ds_orders as
 	(
 	select   
@@ -18,7 +18,7 @@ ds_orders as
 		,count(order_id) as orders_ds
 	from orders
 	group by 1
-	),
+	),						-- the number of orders in individual states
 ds_sm_orders as
 	(
 	select 
@@ -27,7 +27,7 @@ ds_sm_orders as
 		,count(o.order_id)	as orders_ds_sm
 	from orders o
 	group by 1, 2
-	)
+	)						-- combination of state, shipping_mode and number of orders
 select 
 	dss.delivery_state
 	,dss.shipping_mode
