@@ -6,7 +6,7 @@ create table managers (
 	,start_date date
 )
 
--- Result after INSERT shown in the next file
+-- Result after INSERT and UPDATE shown in the next files
 	
 |manager_id|first_name|last_name|manager_email              |start_date|
 |----------|----------|---------|---------------------------|----------|
@@ -21,7 +21,7 @@ create table managers_product_groups (
 	,group_id int
 )
 
--- Result after INSERT shown in the next file
+-- Result after INSERT and UPDATE shown in the next files
 	
 |mpg_id|manager_id|group_id|
 |------|----------|--------|
