@@ -6,7 +6,8 @@ values
 	('James', 'Smith')
 	,('Jane', 'Doe')
 	,('Robert', 'Adams')
-	
+
+-- Result shown in CREATE TABLE file
 
 insert into managers_product_groups 
 	(
@@ -19,3 +20,5 @@ values
 	
 	
 select * from managers_product_groups mpg 
+
+-- Result shown in CREATE TABLE file
