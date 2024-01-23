@@ -4,6 +4,20 @@ select
 from orders
 group by 1; -- first step
 
+|customer_id|orders|
+|-----------|------|
+|166        |3     |
+|262        |5     |
+|728        |6     |
+|111        |8     |
+|25         |4     |
+|361        |7     |
+|353        |7     |
+|620        |12    |
+|41         |5     |
+|815        |5     |
+
+
 /* add subquery to clasify customers as for example loyal, new on the basis of number of orders*/
 
 select
