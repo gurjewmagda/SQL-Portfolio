@@ -39,3 +39,7 @@ from prep_aggregations
 group by 1
 order by 2 desc
 limit 1
+
+|product_id|all_non_first_orders_made|
+|----------|-------------------------|
+|1,393     |26                       |
