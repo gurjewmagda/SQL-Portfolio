@@ -27,6 +27,20 @@ where
 group by 1, 2, 3, 4
 order by 1, 2
 
+|delivery_state|shipping_mode |total_orders|nr_of_orders_ds|nr_of_orders|ds_ratio_percent|
+|--------------|--------------|------------|---------------|------------|----------------|
+|California    |First Class   |5,009       |1,021          |164         |16.1            |
+|California    |Same Day      |5,009       |1,021          |55          |5.4             |
+|California    |Second Class  |5,009       |1,021          |201         |19.7            |
+|California    |Standard Class|5,009       |1,021          |601         |58.9            |
+|Florida       |First Class   |5,009       |200            |28          |14              |
+|Florida       |Same Day      |5,009       |200            |11          |5.5             |
+|Florida       |Second Class  |5,009       |200            |36          |18              |
+|Florida       |Standard Class|5,009       |200            |125         |62.5            |
+|Illinois      |First Class   |5,009       |276            |42          |15.2            |
+|Illinois      |Same Day      |5,009       |276            |9           |3.3             |
+
+
 ======================================================
 
 select
