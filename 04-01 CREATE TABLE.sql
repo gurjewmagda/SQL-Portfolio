@@ -5,6 +5,8 @@ create table managers (
 	,manager_email varchar(200)
 	,start_date date
 )
+
+-- Result after INSERT shown in the next file
 	
 |manager_id|first_name|last_name|manager_email              |start_date|
 |----------|----------|---------|---------------------------|----------|
@@ -18,6 +20,9 @@ create table managers_product_groups (
 	,manager_id int
 	,group_id int
 )
+
+-- Result after INSERT shown in the next file
+	
 |mpg_id|manager_id|group_id|
 |------|----------|--------|
 |1     |1         |1       |
