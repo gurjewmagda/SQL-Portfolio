@@ -1,4 +1,4 @@
-/* Only states with number of customers >100 */
+/* Table (06-01) - only states with number of customers >100 */
 
 select 
 	o.delivery_state 
