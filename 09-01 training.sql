@@ -9,8 +9,8 @@ test_1 as
 		,product_id
 		,round(sum(product_price),2) 	as 	total_price
 		,round(avg(product_price),2) 	as 	avg_price
-		,round(min(product_price),2)	as  min_price
-		,round(max(product_price),2)	as  max_price
+		,round(min(product_price),2)	as	  min_price
+		,round(max(product_price),2)	as 	 max_price
 from products
 where group_id <>10
 group by 1,2
@@ -66,8 +66,8 @@ select * from order_positions;
 
 Query:
 	
-	with
-LA_orders_returned as -- orders returned from LA with customer name
+with
+LA_orders_returned as 				-- orders returned from LA with customer name
 		(
 		select
 		o.order_id
@@ -77,7 +77,7 @@ LA_orders_returned as -- orders returned from LA with customer name
 		inner join order_returns or2 on o.order_id = or2.order_id
 		where delivery_city = 'Los Angeles'
 		),
-LA_product_returned as -- here I have product_id
+LA_product_returned as 				-- here I have product_id
 		(
 		select 
 		op.order_id
