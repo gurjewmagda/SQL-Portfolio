@@ -1,5 +1,6 @@
-/* test of CTE */
-
+===========================================================================================================
+/* exercises with Common Table Expressions */
+===========================================================================================================
 with
 test_1 as
 	(
@@ -23,12 +24,49 @@ select distinct
 	where min_price < 7
 	order by 1,2 asc;
 
+|product_id|min_price|
+|----------|---------|
+|166       |6.28     |
+|168       |6.24     |
+|170       |6.28     |
+|189       |6.98     |
+|219       |6.98     |
+|246       |6.28     |
+|307       |6.64     |
+|504       |6.08     |
+|526       |6.48     |
+|541       |6.94     |
+|560       |6.47     |
+|567       |6.68     |
+|597       |6.08     |
+|643       |6.7      |
+|660       |6.47     |
+|689       |6.23     |
+|698       |6.38     |
+|699       |6.17     |
+|701       |6.28     |
+|724       |6.54     |
 
+
+==============================================================================================================
 /* which products were returned from LA ?, what was the customer_id ? */
-
+==============================================================================================================
 select* from orders;
 
-with
+|order_id|customer_id|order_date|shipping_date|shipping_mode|delivery_country|delivery_city|delivery_state|delivery_zip_code|order_return|
+|--------|-----------|----------|-------------|-------------|----------------|-------------|--------------|-----------------|------------|
+|328     |166        |2020-12-04|2020-12-07   |Second Class |United States   |Henderson    |Kentucky      |42,420           |37          |
+==================================================================================================================
+
+select * from order_positions;
+|order_id|order_position_id|product_id|item_quantity|position_discount|
+|--------|-----------------|----------|-------------|-----------------|
+|328     |108              |13        |2            |0                |
+
+
+Query:
+	
+	with
 LA_orders_returned as -- orders returned from LA with customer name
 		(
 		select
@@ -56,6 +94,20 @@ from LA_orders_returned laor
 inner join LA_product_returned lapr on laor.order_id=lapr.order_id
 order by 1
 	
+|order_id|customer_id|product_id|delivery_city|
+|--------|-----------|----------|-------------|
+|329     |262        |960       |Los Angeles  |
+|1,445   |69         |344       |Los Angeles  |
+|1,445   |69         |98        |Los Angeles  |
+|1,559   |571        |1,731     |Los Angeles  |
+|1,559   |571        |1,497     |Los Angeles  |
+|2,894   |134        |326       |Los Angeles  |
+|2,894   |134        |1,848     |Los Angeles  |
+|2,894   |134        |482       |Los Angeles  |
+|3,901   |532        |595       |Los Angeles  |
+|3,901   |532        |963       |Los Angeles  |
+|4,094   |325        |1,784     |Los Angeles  |
+|4,887   |399        |394       |Los Angeles  |
 	
 	
 	
