@@ -63,6 +63,11 @@ select * from order_positions;
 |--------|-----------------|----------|-------------|-----------------|
 |328     |108              |13        |2            |0                |
 
+select * from order_returns;
+|order_id|next_order_free|
+|--------|---------------|
+|329     |0              |
+
 
 Query:
 	
