@@ -17,7 +17,7 @@ test_1 as
 	having max_price >6
 	order by group_id asc
 	)
-select distinct
+select distinct				-- distinct not needed because order_id is unique
 	product_id
 	,min_price
 	from test_1 t1
