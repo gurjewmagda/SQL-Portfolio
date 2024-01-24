@@ -110,7 +110,7 @@ SELECT
 	,lapr.product_id
 	,laor.delivery_city
 FROM LA_orders_returned laor
-INNER JOIN LA_product_returned lapr on laor.order_id=lapr.order_id
+INNER JOIN LA_product_returned lapr ON laor.order_id=lapr.order_id
 ORDER BY 1
 
 Final result - orders returned from Los Angeles with a product_id and customer_id
