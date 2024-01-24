@@ -11,11 +11,11 @@ test_1 as
 		,round(avg(product_price),2) 	as 	avg_price
 		,round(min(product_price),2)	as	min_price
 		,round(max(product_price),2)	as 	max_price
-from products
-where group_id <>10
-group by 1,2
-having max_price >6
-order by group_id asc
+	from products
+	where group_id <>10
+	group by 1,2
+	having max_price >6
+	order by group_id asc
 	)
 select distinct
 	product_id
