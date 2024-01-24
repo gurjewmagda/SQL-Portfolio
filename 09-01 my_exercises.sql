@@ -47,6 +47,22 @@ select distinct				-- distinct not needed because order_id is unique
 |701       |6.28     |
 |724       |6.54     |
 
+--simplified version:
+SELECT
+    DISTINCT product_id,
+    ROUND(MIN(product_price), 2) AS min_price
+FROM
+    products
+WHERE
+    group_id <> 10
+GROUP BY
+    group_id, product_id
+HAVING
+    ROUND(MAX(product_price), 2) > 6
+    AND ROUND(MIN(product_price), 2) < 7
+ORDER BY
+    product_id, min_price asc
+   limit 20;
 
 =============================================================================================================================================================================================================================
 /* which products were returned from LA ?, what was the customer_id ? */
