@@ -85,33 +85,33 @@ select * from order_returns;
 
 Query:
 	
-with
-LA_orders_returned as 				-- orders returned from LA with customer name
+WITH
+LA_orders_returned AS 				-- orders returned from LA with customer name
 		(
-		select
+		SELECT
 		o.order_id
 		,o.customer_id
 		,o.delivery_city
-		from orders o
-		inner join order_returns or2 on o.order_id = or2.order_id
-		where delivery_city = 'Los Angeles'
+		FROM orders o
+		INNER JOIN order_returns or2 on o.order_id = or2.order_id
+		WHERE delivery_city = 'Los Angeles'
 		),
-LA_product_returned as 				-- here I have product_id
+LA_product_returned AS 				-- here I have product_id
 		(
-		select 
+		SELECT 
 		op.order_id
 		,op.product_id
-		from order_positions op 
-		inner join orders o on o.order_id=op.order_id
+		FROM order_positions op 
+		INNER JOIN orders o ON o.order_id=op.order_id
 		)
-select 
+SELECT 
 	laor.order_id
 	,laor.customer_id
 	,lapr.product_id
 	,laor.delivery_city
-from LA_orders_returned laor
-inner join LA_product_returned lapr on laor.order_id=lapr.order_id
-order by 1
+FROM LA_orders_returned laor
+INNER JOIN LA_product_returned lapr on laor.order_id=lapr.order_id
+ORDER BY 1
 
 Final result - orders returned from Los Angeles with a product_id and customer_id
 	
