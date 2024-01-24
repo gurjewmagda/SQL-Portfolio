@@ -52,11 +52,9 @@ select distinct
 /* which products were returned from LA ?, what was the customer_id ? */
 =============================================================================================================================================================================================================================
 select* from orders;
-
 |order_id|customer_id|order_date|shipping_date|shipping_mode|delivery_country|delivery_city|delivery_state|delivery_zip_code|order_return|
 |--------|-----------|----------|-------------|-------------|----------------|-------------|--------------|-----------------|------------|
 |328     |166        |2020-12-04|2020-12-07   |Second Class |United States   |Henderson    |Kentucky      |42,420           |37          |
-==================================================================================================================
 
 select * from order_positions;
 |order_id|order_position_id|product_id|item_quantity|position_discount|
