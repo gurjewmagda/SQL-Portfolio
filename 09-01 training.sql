@@ -1,4 +1,4 @@
-/* Exercises of how Common Table Expressions works */
+/* test of CTE */
 
 with
 test_1 as
@@ -8,8 +8,8 @@ test_1 as
 		,product_id
 		,round(sum(product_price),2) 	as 	total_price
 		,round(avg(product_price),2) 	as 	avg_price
-		,round(min(product_price),2)	as 	 min_price
-		,round(max(product_price),2)	as 	 max_price
+		,round(min(product_price),2)	as  min_price
+		,round(max(product_price),2)	as  max_price
 from products
 where group_id <>10
 group by 1,2
@@ -23,27 +23,44 @@ select distinct
 	where min_price < 7
 	order by 1,2 asc;
 
-Result:
-|product_id|min_price|
-|----------|---------|
-|166       |6.28     |
-|168       |6.24     |
-|170       |6.28     |
-|189       |6.98     |
-|219       |6.98     |
-|246       |6.28     |
-|307       |6.64     |
-|504       |6.08     |
-|526       |6.48     |
-|541       |6.94     |
-|560       |6.47     |
-|567       |6.68     |
-|597       |6.08     |
-|643       |6.7      |
-|660       |6.47     |
-|689       |6.23     |
 
+/* which products were returned from LA ?, what was the customer_id ? */
 
+select* from orders;
+
+with
+LA_orders_returned as -- orders returned from LA with customer name
+		(
+		select
+		o.order_id
+		,o.customer_id
+		,o.delivery_city
+		from orders o
+		inner join order_returns or2 on o.order_id = or2.order_id
+		where delivery_city = 'Los Angeles'
+		),
+LA_product_returned as -- here I have product_id
+		(
+		select 
+		op.order_id
+		,op.product_id
+		from order_positions op 
+		inner join orders o on o.order_id=op.order_id
+		)
+select 
+	laor.order_id
+	,laor.customer_id
+	,lapr.product_id
+	,laor.delivery_city
+from LA_orders_returned laor
+inner join LA_product_returned lapr on laor.order_id=lapr.order_id
+order by 1
+	
+	
+	
+	
+	
+	
 
 
 
