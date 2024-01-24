@@ -93,7 +93,7 @@ LA_orders_returned AS 				-- orders returned from LA with customer name
 		,o.customer_id
 		,o.delivery_city
 		FROM orders o
-		INNER JOIN order_returns or2 on o.order_id = or2.order_id
+		INNER JOIN order_returns or2 ON o.order_id = or2.order_id
 		WHERE delivery_city = 'Los Angeles'
 		),
 LA_product_returned AS 				-- here I have product_id
