@@ -98,6 +98,8 @@ select
 from LA_orders_returned laor
 inner join LA_product_returned lapr on laor.order_id=lapr.order_id
 order by 1
+
+Final result - orders returned from Los Angeles with a product_id and customer_id
 	
 |order_id|customer_id|product_id|delivery_city|
 |--------|-----------|----------|-------------|
