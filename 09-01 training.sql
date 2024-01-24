@@ -9,8 +9,8 @@ test_1 as
 		,product_id
 		,round(sum(product_price),2) 	as 	total_price
 		,round(avg(product_price),2) 	as 	avg_price
-		,round(min(product_price),2)	as	  min_price
-		,round(max(product_price),2)	as 	 max_price
+		,round(min(product_price),2)	as	min_price
+		,round(max(product_price),2)	as 	max_price
 from products
 where group_id <>10
 group by 1,2
