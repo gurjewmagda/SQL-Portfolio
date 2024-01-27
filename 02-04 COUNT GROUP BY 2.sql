@@ -1,9 +1,9 @@
-select 
+SELECT 
 	shipping_mode 
 	,delivery_city 
-	,count(*) as number_of_orders
-from orders
-where 
+	,COUNT(*) AS number_of_orders
+FROM orders
+WHERE 
 	delivery_city ='Los Angeles'
-group by
+GROUP BY
 	1,2
